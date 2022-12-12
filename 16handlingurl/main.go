@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
-import "net/url"
+import (
+	"fmt"
+	//"net/http"
+	"net/url"
+)
 
 const myurl string = "http://lco.dev:3000/learn?coursename=reactjs&paymentid=ghbj456jhb"
 
@@ -26,5 +29,14 @@ func main() {
 	//for val, key := range qpar {
 	fmt.Printf("values %+v ", qpar)
 	//}
+
+	partsofurl := &url.URL{
+		Scheme:  "https",
+		Host:    "lco.dev",
+		Path:    "/tutcss",
+		RawPath: "user=hitesh",
+	}
+	//anotherurl := partsofurl.String()
+	fmt.Println(partsofurl)
 
 }
